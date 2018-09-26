@@ -1,0 +1,70 @@
+<com.ykbjson.view.MFocusView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/tvBoxBtn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="top"
+        android:layout_toStartOf="@+id/fanBtn"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/setBtn"
+        android:nextFocusRight="@+id/fanBtn"
+        android:text="机顶盒"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <Button
+        android:id="@+id/fanBtn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="top"
+        android:layout_toStartOf="@id/airBtn"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/tvBoxBtn"
+        android:nextFocusRight="@+id/airBtn"
+        android:text="电风扇"
+        android:textColor="@android:color/holo_purple" />
+
+    <Button
+        android:id="@+id/airBtn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="top"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/fanBtn"
+        android:nextFocusRight="@+id/netBoxBtn"
+        android:text="空调"
+        android:textColor="@android:color/holo_orange_dark" />
+
+    <Button
+        android:id="@+id/netBoxBtn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="bottom"
+        android:layout_toEndOf="@+id/airBtn"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/airBtn"
+        android:nextFocusRight="@+id/setBtn"
+        android:text="网络盒子"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <Button
+        android:id="@+id/setBtn"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="bottom"
+        android:layout_toEndOf="@+id/netBoxBtn"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/netBoxBtn"
+        android:nextFocusRight="@+id/tvBoxBtn"
+        android:text="设置"
+        android:textColor="@android:color/holo_blue_dark" />
+
+</com.ykbjson.view.MFocusView>
