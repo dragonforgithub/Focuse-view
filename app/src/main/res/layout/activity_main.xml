@@ -1,7 +1,23 @@
 <com.ykbjson.view.MFocusView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/LoginToolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:textColor="@android:color/white"
+            android:text="控智易"
+            android:clickable="false"
+            android:focusable="false" />
+    </android.support.v7.widget.Toolbar>
 
     <Button
         android:id="@+id/tvBoxBtn"
@@ -14,7 +30,9 @@
         android:nextFocusLeft="@+id/setBtn"
         android:nextFocusRight="@+id/fanBtn"
         android:text="机顶盒"
-        android:textColor="@android:color/holo_green_dark" />
+        android:background="@drawable/comom_green_btn"
+        android:drawableBottom="@drawable/kj_box"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/fanBtn"
@@ -27,7 +45,9 @@
         android:nextFocusLeft="@+id/tvBoxBtn"
         android:nextFocusRight="@+id/airBtn"
         android:text="电风扇"
-        android:textColor="@android:color/holo_purple" />
+        android:background="@drawable/common_btn_selector1"
+        android:drawableBottom="@drawable/kj_fan_image"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/airBtn"
@@ -39,7 +59,9 @@
         android:nextFocusLeft="@+id/fanBtn"
         android:nextFocusRight="@+id/netBoxBtn"
         android:text="空调"
-        android:textColor="@android:color/holo_orange_dark" />
+        android:background="@drawable/comom_yellow_btn"
+        android:drawableBottom="@drawable/kj_air_image"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/netBoxBtn"
@@ -52,7 +74,9 @@
         android:nextFocusLeft="@+id/airBtn"
         android:nextFocusRight="@+id/setBtn"
         android:text="网络盒子"
-        android:textColor="@android:color/holo_blue_bright" />
+        android:background="@drawable/comom_blue_btn"
+        android:drawableBottom="@drawable/kj_netbox_image"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/setBtn"
@@ -65,6 +89,8 @@
         android:nextFocusLeft="@+id/netBoxBtn"
         android:nextFocusRight="@+id/tvBoxBtn"
         android:text="设置"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:background="@drawable/comom_gray_btn"
+        android:drawableBottom="@drawable/kj_setting_image"
+        android:textColor="@android:color/white" />
 
 </com.ykbjson.view.MFocusView>

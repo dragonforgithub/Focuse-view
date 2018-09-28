@@ -12,8 +12,8 @@
 
     <!-- 渐变 -->
     <gradient
-        android:endColor="#0096C9"
-        android:startColor="#5EB7D7"
+        android:endColor="#6f029b"
+        android:startColor="#9244bc"
         android:type="linear"
         android:angle="90"
         android:useLevel="true" />
@@ -21,7 +21,7 @@
     <!-- 描边 -->
     <stroke
         android:width="1px"
-        android:color="#01749c" />
+        android:color="#52006b" />
 
     <size
         android:height="40dp"

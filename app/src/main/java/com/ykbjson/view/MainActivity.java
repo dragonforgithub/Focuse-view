@@ -1,5 +1,6 @@
 package com.ykbjson.view;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -26,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Display display = getWindowManager().getDefaultDisplay(); // 为获取屏幕宽、高
         Window window = getWindow();
         WindowManager.LayoutParams windowLayoutParams = window.getAttributes(); // 获取对话框当前的参数值
-        windowLayoutParams.width = (int) (display.getWidth() * 0.8); // 宽度设置为屏幕的0.95
-        windowLayoutParams.height = (int) (display.getHeight() * 0.8); // 高度设置为屏幕的0.6
-        //windowLayoutParams.alpha = 0.9f;// 设置透明度
+        windowLayoutParams.width = (int) (display.getWidth() * 0.8); // 宽度设置为屏幕的0.8
+        windowLayoutParams.height = (int) (display.getHeight() * 0.6); // 高度设置为屏幕的0.6
+        //windowLayoutParams.alpha = 0.5f;// 设置透明度
     }
 
     @Override

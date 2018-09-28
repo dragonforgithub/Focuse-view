@@ -55,7 +55,7 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
      */
     @SuppressLint("ResourceType")
     private void initFloatView() {
-        final View child = getChildAt(0); //获取ChildView[1](此应用即为第二个button)的位置
+        final View child = getChildAt(1); //获取ChildView[1]跳过title
 
         if (null != child) {
             /* 更改选择view的大小 */
@@ -65,7 +65,7 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
 
             lp.width=focusSize;
             lp.height=focusSize;
-            lp.rightMargin=-10;
+            //lp.rightMargin=-10;
 
             child.setLayoutParams(lp);
             //child.requestLayout();
@@ -93,7 +93,7 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
             /* 不按比例拉伸图片以填充view */
             floatView.setScaleType(ScaleType.FIT_XY);
             /* 设置图片资源 */
-            floatView.setImageResource(R.drawable.focus_bound);
+            floatView.setImageResource(R.drawable.select_bg_image);
             /* 添加子view */
             addView(floatView);
 
@@ -117,7 +117,7 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
             /* 设置监听移动 */
             if (getChildCount() > 0) {
                 Log.i(TAG, "onLayout,childCount :  " + getChildCount());
-                for (int i = 0; i < getChildCount(); i++) {
+                for (int i = 1; i < getChildCount(); i++) {
                     /* 触屏点击时的监听 */
                     getChildAt(i).setOnClickListener(this);
                     /* 焦点移动时的监听 */
@@ -176,19 +176,19 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
         if(lp.width!=focusSize || lp.height!=focusSize){
             lp.width=focusSize;
             lp.height=focusSize;
-            lp.leftMargin=-10;
-            lp.rightMargin=-10;
+            //lp.leftMargin=-10;
+            //lp.rightMargin=-10;
             child.setLayoutParams(lp);
 
             /* 将其他的视图置小,最后一个child view是飘框 */
-            if (getChildCount() > 1) {
-                for (int i = 0; i < getChildCount()-1; i++) {
+            if (getChildCount() > 2) {
+                for (int i = 1; i < getChildCount()-1; i++) {
                     if(getChildAt(i).getId() != child.getId()){
                         LayoutParams otherLp = (LayoutParams) getChildAt(i).getLayoutParams();
                         otherLp.width=otherSize;
                         otherLp.height=otherSize;
-                        otherLp.leftMargin=0;
-                        otherLp.rightMargin=0;
+                        //otherLp.leftMargin=0;
+                        //otherLp.rightMargin=0;
                         getChildAt(i).setLayoutParams(otherLp);
                         Log.i(TAG, "getChildCount():"+i);
                     }
@@ -210,10 +210,10 @@ public class MFocusView extends RelativeLayout implements OnFocusChangeListener,
         }
 
         /* 根据当前子view的坐标、宽、高更新视图框 */
-        float focusX = child.getLeft();
-        float focusY = child.getTop();
-        float focusW = child.getRight() - focusX;
-        float focusH = child.getBottom() - focusY;
+        float focusX = child.getLeft()-20;
+        float focusY = child.getTop()-20;
+        float focusW = child.getRight() - focusX + 20;
+        float focusH = child.getBottom() - focusY + 20;
 
         floatView.onReLayout(focusX, focusY, focusW, focusH);
 

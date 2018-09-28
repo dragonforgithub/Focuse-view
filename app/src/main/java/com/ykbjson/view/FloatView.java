@@ -103,14 +103,14 @@ public class FloatView extends ImageView {
         });
 
         //延迟进行缩放，可根据setDuration的值设置合适的时间就在移动到对应位置看到缩放变化
-        valueAnimator.setStartDelay(100);
+        valueAnimator.setStartDelay(25);
 
         //用于控制一组动画的执行：线性，一起，每个动画的先后执行等
         AnimatorSet set = new AnimatorSet();
         //设置动画同时作用([ObjectAnimator]边移动 [valueAnimator]边缩放)：X坐标，Y坐标，缩放
         set.playTogether(ObjectAnimator.ofFloat(this, "translationX", nFocusX, focusX), ObjectAnimator.ofFloat(this, "translationY", nFocusY, focusY), valueAnimator);
         //设置变化过程时间长度
-        set.setDuration(200);
+        set.setDuration(50);
         set.setTarget(this);
         set.start();
 
